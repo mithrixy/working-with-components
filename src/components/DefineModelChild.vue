@@ -1,10 +1,8 @@
+<script setup>
+const message = defineModel({ type: String});
+</script>
+
 <template>
-    <div>
-        <input v-model="message" placeholder="Type here..."/>
-    </div>
+    <input v-model="message" placeholder="child msg"/>
 </template>
 
-<script setup>
-//receive + modify message property
-const message = defineModel();
-</script>

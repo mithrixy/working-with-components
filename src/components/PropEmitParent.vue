@@ -1,16 +1,16 @@
-<template>
-    <PropEmitChild @updateMessage="handleMessage"/>
-    <p>Message from child component: {{  message  }}</p>
-</template>
-
 <script setup>
 import PropEmitChild from './PropEmitChild.vue'
 import { ref } from 'vue';
 
-const message = ref('');
+const message = ref('Message from the parent');
 
 const handleMessage = (newMessage) => {
     message.value = newMessage;
 }
 
 </script>
+
+<template>
+    <PropEmitChild :message="message" @updateMessage="message = $event"/>
+    <p> Parent message: {{  message  }}</p>
+</template>

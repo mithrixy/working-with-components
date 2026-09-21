@@ -1,14 +1,6 @@
-<template>
-    <div>
-        <h3>{{  message  }}</h3>
-
-        <button @click="emitEvent">Send Message</button>
-    </div>
-</template>
-
 <script setup>
 defineProps({
-    message: 'message from parent component!'
+    message: String
 });
 
 const emit = defineEmits(['updateMessage']);
@@ -18,3 +10,8 @@ const emitEvent = () => {
 }
 
 </script>
+
+<template>
+    <p> Child message: {{ message }} </p>
+    <button @click="emitEvent">Update Message</button>
+</template>
