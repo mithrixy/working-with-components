@@ -1,5 +1,4 @@
 <template>
-    <PropEmitChild :message="message"/>
     <PropEmitChild @updateMessage="handleMessage"/>
     <p>Message from child component: {{  message  }}</p>
 </template>
